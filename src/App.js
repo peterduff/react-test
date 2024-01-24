@@ -10,7 +10,7 @@ export default function ReactTest() {
     const [cardStatus, setCardStatusBool] = useState(false);
 
     function generateImage() {
-        let param = customTopic.length ? customTopic : topic;
+        let param = topic === 'other' ? customTopic : topic;
 
         fetch('https://source.unsplash.com/random/?' + param)
             .then(data => {
@@ -79,7 +79,7 @@ function ImageView({imageUrl, imageUrlChange, setCardStatus}) {
             { imageUrl.length ?
                 <div>
                     <div className="px-3">
-                        <img src={imageUrl} className="object-fit-fill border rounded topic-image"/>
+                        <img src={imageUrl} className="border rounded topic-image"/>
                     </div>
                     <div className="px-3">
                         <button className="btn btn-danger my-3 me-3" onClick={imageUrlChange}>Reject</button>
@@ -97,9 +97,9 @@ function ImageView({imageUrl, imageUrlChange, setCardStatus}) {
 
 function OutputView({name, surname, imageUrl, setCardStatus}) {
     return (
-        <div className="card-view" onClick={(e) => setCardStatus(false)}>
-            <div className="m-3 rounded overflow-hidden">
-                <img className="object-fit-fill topic-image" src={imageUrl} />
+        <div className="background" onClick={(e) => setCardStatus(false)}>
+            <div className="m-3 card-container rounded overflow-hidden">
+                <img className="card-image" src={imageUrl} />
                 <h2 className="display-6 card-text p-3 text-end">{name} {surname}</h2>
             </div>
         </div>

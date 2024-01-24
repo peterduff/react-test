@@ -5,16 +5,30 @@ h3.banner {
 
 img.topic-image {
     max-width: -webkit-fill-available;
-    max-height: 600px;
+    max-height: 500px;
+    object-fit: cover;
 }
 
-div.card-view {
+div.background {
     position: absolute;
     top: 0;
     right: 0;
     left: 0;
     bottom: 0;
-    background-color: rgba(0,0,0,0.9);
+    background-color: black;
+    display: flex;
+    justify-content: center;
+}
+
+div.card-container {
+    width: 500px;
+    max-width: 90%;
+    height: fit-content;
+}
+
+img.card-image {
+    max-width: -webkit-fill-available;
+    object-fit: contain;
 }
 
 h2.card-text {
