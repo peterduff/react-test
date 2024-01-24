@@ -1,0 +1,22 @@
+h3.banner {
+    background-color: #134F5C;
+    color: white;
+}
+
+img.topic-image {
+    max-width: -webkit-fill-available;
+    max-height: 600px;
+}
+
+div.card-view {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.9);
+}
+
+h2.card-text {
+    background-color: white;
+}
